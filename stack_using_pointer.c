@@ -10,12 +10,12 @@ void main()
     int i,ch,item;
     while(1)
     {
-        printf("\n1.PUSH\n2.POP\n3.PEEP\n4.PRINT\n5.EXIT");
+        printf("\n\n1.PUSH\n2.POP\n3.PEEP\n4.PRINT\n5.EXIT");
         printf("\nENTER YOUR CHOICE:");
         scanf("%d",&ch);
         switch(ch)
         {
-            case 1:if(*top==size-1)
+            case 1:if(top==size-1)
             {
                 printf("\nSTACK OVERFLOW!");
             }
@@ -26,9 +26,9 @@ void main()
                 push(arr,&top,item);
             }
             break;
-            case 2:if(*top==-1)
+            case 2:if(top==-1)
             {
-                printf("STACK UNDERFLOW!");
+                printf("\nSTACK UNDERFLOW!");
             }
             else
             {
@@ -36,7 +36,7 @@ void main()
                 printf("\nELEMENT POPPED=%d",item);
             }
             break;
-            case 3:if(*top==-1)
+            case 3:if(top==-1)
             {
                 printf("\nSTACK UNDERFLOW!");
             }
@@ -62,7 +62,7 @@ void main()
 void push(int arr[],int *top,int item)
 {
     *top=*top+1;
-    arr[top]=item;
+    arr[*top]=item;
 }
 int pop(int arr[],int *top)
 {
@@ -71,7 +71,7 @@ int pop(int arr[],int *top)
     *top=*top-1;
     return temp;
 }
-int peep(int arr[].int *top)
+int peep(int arr[],int *top)
 {
-    return arr[top];
+    return arr[*top];
 }

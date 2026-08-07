@@ -38,6 +38,7 @@ int evaluate(char postfix[])
 {
     char sym;
     int op1,op2,top=-1,i,res;
+    postfix=strrev(postfix);
     for(i=0;i<strlen(postfix);i++)
     {
         sym=postfix[i];
@@ -47,8 +48,8 @@ int evaluate(char postfix[])
         }
         else if(is_operator(sym)==1)
         {
-            op2=pop();
             op1=pop();
+            op2=pop();
             switch(sym)
             {
                 case '/':res=op1/op2;
@@ -82,5 +83,5 @@ void main()
     printf("Enter postfix expression:");
     gets(postfix);
     result=evaluate(postfix);
-    printf("\n%s=%d",postfix,result);
+    printf("\n%s=%d",strrev(postfix),result);
 }

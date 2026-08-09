@@ -2,31 +2,39 @@
 #include<stdlib.h>
 #include<string.h>
 #define size 20
-char stack;
+char stack[size];
 int top=-1;
-char push(char *string)
+void push(char string)
 {
     top=top+1;
-    stack[top]=*string;
+    stack[top]=string;
 }
 char pop()
 {
-    int temp;
+    char temp;
     temp=stack[top];
     top=top-1;
     return temp;
 }
 void main()
 {
-    char string;
-    int i,temp;
-    for(i=0;i<strlen(*string);i++)
+    char temp,string[size];
+    int i;
+    printf("Enter a string: ");
+    gets(string);
+    for(i=0;i<strlen(string);i++)
     {
+        if(string[i]==' ' || string[i]=='\t')
+        {
+            push(*(string+i));
+        }
+        else
         push(*(string+i));
     }
-    for(i=0;i<strlen(*string);i++)
+    printf("\nReversed string:");
+    for(i=0;i<strlen(string);i++)
     {
         temp=pop();
-        printf("string:",temp)
+        printf("%c",temp);
     }
 }

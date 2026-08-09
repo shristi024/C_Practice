@@ -34,14 +34,14 @@ int is_operand(char sym)
     return 1;
     else return 0;
 }
-int evaluate(char postfix[])
+int evaluate(char prefix[])
 {
     char sym;
     int op1,op2,top=-1,i,res;
-    postfix=strrev(postfix);
-    for(i=0;i<strlen(postfix);i++)
+    prefix=strrev(prefix);
+    for(i=0;i<strlen(prefix);i++)
     {
-        sym=postfix[i];
+        sym=prefix[i];
         if(is_operand(sym)==1)
         {
             push(sym-48);
@@ -78,10 +78,10 @@ int evaluate(char postfix[])
 }
 void main()
 {
-    char postfix[size];
+    char prefix[size];
     int result;
-    printf("Enter postfix expression:");
-    gets(postfix);
-    result=evaluate(postfix);
-    printf("\n%s=%d",strrev(postfix),result);
+    printf("Enter prefix expression:");
+    gets(prefix);
+    result=evaluate(prefix);
+    printf("\n%s=%d",strrev(prefix),result);
 }

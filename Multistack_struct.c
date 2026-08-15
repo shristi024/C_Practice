@@ -141,7 +141,7 @@ void main()
                 printf("\nELEMENT PEEPED IN S3=%d",item);
             }
             break;
-            case 12:printf("\nSTACK S2:");
+            case 12:printf("\nSTACK S3:");
             for(i=s3.top;i>=0;i--)
             {
                 printf("\n%d",s3.arr[i]);

@@ -23,11 +23,6 @@ void main()
     gets(string);
     for(i=0;i<strlen(string);i++)
     {
-        if(string[i]==' ' || string[i]=='\t')
-        {
-            push(*(string+i));
-        }
-        else
         push(*(string+i));
     }
     printf("\nReversed string:");
